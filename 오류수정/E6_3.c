@@ -13,20 +13,17 @@ int main(void)
 
     y = solution_num(a, b, c);
 
-    if (y > 2)
+    if (y == 2)
     {
         printf("ax^2 + bx + c = 0 の実数解の個数は2個です");
     }
-    else
+    if (y == 1)
     {
-        if (y == 0)
-        {
-            printf("ax^2 + bx + c = 0 の実数解の個数は1個です");
-        }
-        else
-        {
-            printf("ax^2 + bx + c = 0 の実数解の個数は0個です");
-        }
+        printf("ax^2 + bx + c = 0 の実数解の個数は1個です");
+    }
+    if (y == 0)
+    {
+        printf("ax^2 + bx + c = 0 の実数解の個数は0個です");
     }
 
     return 0;
@@ -44,6 +41,22 @@ int discriminant(int a, int b, int c)
 int solution_num(int a, int b, int c)
 {
     int y = discriminant(a, b, c);
+
+    if (y > 2)
+    {
+        y = 2;
+    }
+    else
+    {
+        if (y == 0)
+        {
+            y = 1;
+        }
+        else
+        {
+            y = 0;
+        }
+    }
 
     return y;
 }

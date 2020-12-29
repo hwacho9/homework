@@ -8,39 +8,31 @@ double quad_eq(int a, int b, int c);
 int main(void)
 {
     int a, b, c;
-    double D, x1, x2;
+    double D, x;
 
     printf("a, b, cを入力してください＞");
     scanf("%d %d %d", &a, &b, &c);
 
     D = solution_num(a, b, c);
-    quad_eq(a, b, c);
+    x = quad_eq(a, b, c);
 
     if (D > 0)
     {
-        x1 = (-b + sqrt(D)) / (2 * a);
-        x2 = (-b - sqrt(D)) / (2 * a);
-
-        if (x1 > x2)
-        {
-            printf("「ax^2 + bx + c = 0 の解のうち大きい方は x = %lf です.」", x1);
-        }
-        else
-        {
-            printf("「ax^2 + bx + c = 0 の解のうち大きい方は x = %lf です.」", x2);
-        }
-    }
-    else if (D == 0)
-    {
-        x1 = -b / (2 * a);
-        printf("「ax^2 + bx + c = 0 の重解は x = %lf です．」", x1);
+        printf("「ax^2 + bx + c = 0 の解のうち大きい方は x = %.2f です.」", x);
     }
     else
     {
-        printf("ax^2 + bx + c = 0 の解はありません.");
-    }
+        if (D == 0)
+        {
+            printf("「ax^2 + bx + c = 0 の重解は x = %.2f です．」", x);
+        }
+        else
+        {
+            printf("ax^2 + bx + c = 0 の解はありません.");
+        }
 
-    return 0;
+        return 0;
+    }
 }
 
 int discriminant(int a, int b, int c)
@@ -78,7 +70,15 @@ int solution_num(int a, int b, int c)
 double quad_eq(int a, int b, int c)
 {
     double D = discriminant(a, b, c);
-    double x1, x2;
+    double x;
+    if (D > 0)
+    {
+        x = (-b + sqrt(D)) / (2 * a);
+    }
+    if (D == 0)
+    {
+        x = -b / (2 * a);
+    }
 
-    return D;
+    return x;
 }
