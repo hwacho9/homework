@@ -13,7 +13,7 @@ int main()
         if (amount < 350)
             amount = amount;
 
-        printf("%d %d\n", i, amount);
+        printf("あと%d日，残高は%4d円．\n", i, amount);
     }
 
     return 0;

@@ -13,7 +13,7 @@ int main()
         printf("%d+%d=%d\n", x, i, m);
         sum += x + i;
     }
-    printf("%d", sum);
+    printf("合計=%d", sum);
 
     return 0;
 }
