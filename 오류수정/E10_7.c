@@ -9,7 +9,7 @@ int main()
     double cos, sin;
     scanf("%d %d %d", &a, &b, &c);
 
-    if (c > a + b)
+    if (c >= a + b)
         printf("三角形ではありません");
     else
     {

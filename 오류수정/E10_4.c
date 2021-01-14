@@ -21,11 +21,12 @@ int main()
         for (int i = 0; i < n; i++)
         {
             sum += a;
+            printf("%d項 = %.2f\n", i + 1, a);
             a = r * a;
         }
     }
 
-    printf("%f", sum);
+    printf("n項までの和 = %.2f", sum);
 
     return 0;
 }
