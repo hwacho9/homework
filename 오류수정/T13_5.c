@@ -5,7 +5,7 @@ double comp(double x);
 
 int main()
 {
-    double n, result;
+    double n;
     scanf("%lf", &n);
 
     for (int i = 0; i < 20; i++)
