@@ -6,14 +6,18 @@ double compg(double x);
 int main()
 {
     int n;
-    double x, result;
+    double x;
     scanf("%lf %d", &x, &n);
+
+    printf("%f\n\n", compg(x));
 
     for (int i = 0; i < n; i++)
     {
-        result = compg(i);
-        printf("%f\n", result);
+        x = compg(x);
+        printf("%f\n", x);
     }
+
+    return 0;
 }
 
 double compg(double x)

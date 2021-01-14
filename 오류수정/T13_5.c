@@ -8,17 +8,14 @@ int main()
     double n, result;
     scanf("%lf", &n);
 
-    for (int i = n; i >= 0; i--)
+    for (int i = 0; i < 20; i++)
     {
-        result = comp(i);
-        printf("%f\n", result);
+        n = comp(n);
+        printf("%f\n", n);
     }
 }
 
 double comp(double x)
 {
-    double n;
-
-    n = 0.9 * x + 2.5;
-    return n;
+    return 0.9 * x + 2.5;
 }

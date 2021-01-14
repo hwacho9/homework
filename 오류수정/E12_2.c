@@ -7,7 +7,7 @@
 
 typedef struct student_data
 {
-    char num;
+    int num;
     int phys;
     int chem;
 } student;
@@ -41,23 +41,17 @@ int main(void)
     cnt = 0;
     while (fgets(buf, BUF_SIZE, fp))
     {
-        sscanf(buf, "%s %d %d", &s[cnt].num, &s[cnt].phys, &s[cnt].chem);
-        /*
-        if (max_chem > s[cnt].chem && min_chem < s[cnt].chem)
-        {
-            fprintf(fpresult, "%d", student.chem);
-        }
-    */
+        sscanf(buf, "%d %d %d", &s[cnt].num, &s[cnt].phys, &s[cnt].chem);
         cnt++;
     }
-
-    scanf("%d ", &sub);
+    scanf("%d", &sub);
     if (sub == 1)
     {
         scanf("%d %d", &max_phys, &min_phys);
         for (int i = 0; i < 10; i++)
         {
-            printf("%d\n", s[i].phys);
+            if (max_phys >= s[i].phys && min_phys <= s[i].phys)
+                printf("%d %d\n", s[i].num, s[i].phys);
         }
     }
     if (sub == 2)
@@ -65,7 +59,8 @@ int main(void)
         scanf("%d %d", &max_chem, &min_chem);
         for (int i = 0; i < 10; i++)
         {
-            printf("%d\n", s[i].chem);
+            if (max_chem >= s[i].chem && min_chem <= s[i].chem)
+                printf("%d %d\n", s[i].num, s[i].chem);
         }
     }
 

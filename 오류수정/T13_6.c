@@ -4,13 +4,23 @@ int main()
 {
     double n, x;
     double sum = 0;
-    scanf("%lf %lf", &n, &x);
+    printf("n >>>");
+    scanf("%lf", &n);
+    printf("x >>>");
+    scanf("%lf", &x);
 
     for (int i = 1; i < n + 1; i++)
     {
-        sum = +n;
-        n = x * n;
+        double tmp;
+        tmp = (double)i;
+        for (int j = 1; j <= i; j++)
+        {
+            tmp *= x;
+        }
+
+        printf("%dx^%d = %f\n", i, i, tmp);
+        sum += tmp;
     }
 
-    printf("%f", sum);
+    printf("和 >>>%f", sum);
 }
