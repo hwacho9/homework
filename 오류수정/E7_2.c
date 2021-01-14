@@ -24,9 +24,8 @@ int main(void)
         if ((N - i) != 1)
             printf(", ");
     }
-
+    ip = 0;
     printf("となり、");
-
     for (i = 0; i < N; i++)
     {
         ip += a[i] * b[i];

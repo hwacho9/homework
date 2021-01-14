@@ -6,8 +6,9 @@
 int main(void)
 {
     int a[N];
+    int inv[N];
 
-    int i, j, temp;
+    int i;
 
     for (i = 0; i < N; i++)
     {
@@ -17,20 +18,12 @@ int main(void)
 
     for (i = 0; i < N; i++)
     {
-        for (j = 0; j < N - 1; j++)
-        {
-            if (a[j] < a[j + 1])
-            {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
+        inv[i] = a[N - i - 1];
     }
 
     for (i = 0; i < N; i++)
     {
-        printf("%d", a[i]);
+        printf("%d", inv[i]);
         if ((N - i) != 1)
             printf(", ");
     }
