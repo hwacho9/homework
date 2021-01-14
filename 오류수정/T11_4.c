@@ -14,23 +14,15 @@ void print_prog1(prog1_t this_class);
 
 int main(void)
 {
-    prog1_t your_class;
-    prog1_t my_class = {2, "Multimedia 1", "Isaka", 4, 2};
-    /*
+    prog1_t my_class, your_class;
     my_class.no = 2;
     strcpy(my_class.room, "Multimedia 1");
     strcpy(my_class.prof, "Isaka");
     my_class.build = 4;
     my_class.floor = 2;
-*/
+
     print_prog1(my_class);
-    /*
-    tmp = my_class;
-    my_class = your_class;
-    your_class = tmp;
-    
-    your_class = my_class;
-*/
+
     your_class = my_class;
 
     print_prog1(your_class);

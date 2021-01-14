@@ -7,6 +7,7 @@ int main()
     int val;
     int sum = 0;
     int cnt;
+    int fre;
     int min = 0, max = 0;
     double average;
     char FileName[14];
@@ -52,13 +53,15 @@ int main()
         ++cnt;
     }
 
-    average = (double)sum / cnt;
+    fre = cnt + 1;
+
+    average = (double)sum / fre;
 
     fpresult = fopen("result.txt", "w");
     if (cnt > 0)
     {
-        fprintf(fpresult, "%d %g %d %d\n", sum, average, max, min);
-        printf("%d %g %d %d\n", sum, average, max, min);
+        fprintf(fpresult, "和：%d 平均値：%.2f 最大値：%d 最小値：%d\n", sum, average, max, min);
+        printf("和：%d 平均値：%.2f 最大値：%d 最小値：%d\n", sum, average, max, min);
     }
 
     fclose(fpin);
