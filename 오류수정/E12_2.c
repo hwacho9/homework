@@ -51,7 +51,7 @@ int main(void)
         for (int i = 0; i < 10; i++)
         {
             if (max_phys >= s[i].phys && min_phys <= s[i].phys)
-                printf("%d %d\n", s[i].num, s[i].phys);
+                fprintf(fpresult, "%d %d\n", s[i].num, s[i].phys);
         }
     }
     if (sub == 2)
@@ -60,7 +60,7 @@ int main(void)
         for (int i = 0; i < 10; i++)
         {
             if (max_chem >= s[i].chem && min_chem <= s[i].chem)
-                printf("%d %d\n", s[i].num, s[i].chem);
+                fprintf(fpresult, "%d %d\n", s[i].num, s[i].chem);
         }
     }
 
