@@ -17,11 +17,11 @@ int main()
 
 double yen2dollar(double yen)
 {
-    return yen + 1.0;
+    return 10000 / (yen + 1.0);
 }
 double euro2yen(double euro)
 {
-    return euro - 1.0;
+    return 100 * (euro - 1.0);
 }
 void kwanse_example(double dl, double er)
 {
@@ -29,7 +29,7 @@ void kwanse_example(double dl, double er)
     euro = er;
 
     printf("今日のレートは 1 ドル %.2f 円, 1 ユーロ %.2f 円です.\n", dl, er);
-    printf("10000 円をドルに両替すると %.2f ドルになります.\n", 10000 / yen2dollar(dl));
-    printf("100 ユーロを円に両替すると %.2f 円になります.\n", 100 * euro2yen(er));
-    printf("100 ユーロを円経由でドルに両替すると %.2f ドルになります.\n", 100 * euro2yen(er) / yen2dollar(dl));
+    printf("10000 円をドルに両替すると %.2f ドルになります.\n", yen2dollar(dl));
+    printf("100 ユーロを円に両替すると %.2f 円になります.\n", euro2yen(er));
+    printf("100 ユーロを円経由でドルに両替すると %.2f ドルになります.\n", (euro2yen(er) * yen2dollar(dl)) / 10000);
 }
