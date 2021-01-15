@@ -70,7 +70,7 @@ int solution_num(int a, int b, int c)
 double quad_eq(int a, int b, int c)
 {
     double D = discriminant(a, b, c);
-    double x;
+    double x = 0;
     if (D > 0)
     {
         x = (-b + sqrt(D)) / (2 * a);
